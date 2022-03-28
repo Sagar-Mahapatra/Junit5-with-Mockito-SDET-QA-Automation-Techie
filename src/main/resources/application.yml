@@ -1,0 +1,13 @@
+server:
+  port: 9289
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: mysql20apr2021
+    url: jdbc:mysql://localhost:3306/unit_testing
+    username: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
