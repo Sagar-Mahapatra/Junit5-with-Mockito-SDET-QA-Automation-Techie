@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sqat.exception.CountryNotFoundException;
 import com.sqat.model.Country;
+import com.sqat.model.CountryResp;
 import com.sqat.service.CountryService;
 
 @RestController
@@ -43,9 +44,9 @@ public class CountryRestController {
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<String> deleteCountry(@PathVariable Integer id) throws CountryNotFoundException {
+	public ResponseEntity<CountryResp> deleteCountry(@PathVariable Integer id) throws CountryNotFoundException {
 		service.removeCountry(id);
-		return new ResponseEntity<String>("DELETED", HttpStatus.OK);
+		return new ResponseEntity<CountryResp>(new CountryResp("200", "DELETED"), HttpStatus.OK);
 	}
 
 }
