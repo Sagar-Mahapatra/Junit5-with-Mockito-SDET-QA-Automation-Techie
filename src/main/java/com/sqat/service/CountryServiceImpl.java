@@ -40,8 +40,7 @@ public class CountryServiceImpl implements CountryService {
 
 	@Override
 	public void removeCountry(Integer id) throws CountryNotFoundException {
-		boolean res = repo.existsById(id);
-		if (res) {
+		if (repo.existsById(id)) {
 			repo.deleteById(id);
 		} else {
 			System.out.println("NOT FOUND");
