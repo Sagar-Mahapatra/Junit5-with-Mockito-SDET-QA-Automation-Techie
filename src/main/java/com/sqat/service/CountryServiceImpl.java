@@ -2,6 +2,7 @@ package com.sqat.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sqat.dao.CountryRepository;
@@ -11,11 +12,8 @@ import com.sqat.model.Country;
 @Service
 public class CountryServiceImpl implements CountryService {
 
+	@Autowired
 	private CountryRepository repo;
-
-	public CountryServiceImpl(CountryRepository repo) {
-		this.repo = repo;
-	}
 
 	@Override
 	public List<Country> getAllCountries() throws CountryNotFoundException {
